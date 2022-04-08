@@ -27,13 +27,16 @@
   font-style: normal; }
 /* :: Import All CSS */
 /* :: Base CSS */
-* {
-  margin: 0;
-  padding: 0; }
+* {}
 
-body {
+  body {
+    /*background-image: url("img/core-img/bg.png");
+    background-position: left top;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;*/
   font-family: "helveticaneuemedium";
-  background-color: #ffffff; }
+}
 
 h1,
 h2,
@@ -381,6 +384,7 @@ img {
       padding: 0; }
       @media only screen and (max-width: 767px) {
         .header-area .original-nav-area .classy-navbar {
+          text-align: left;
           height: 70px; } }
   .header-area .is-sticky .original-nav-area {
     background-color: #ffffff;
