@@ -16,8 +16,13 @@
 @import url(css/owl.carousel.css);
 @import url(css/font-awesome.min.css);
 @font-face {
-  font-family: 'pinkchicken';
-  src: url("fonts/PinkChicken-Regular.ttf") format("ttf"), url("fonts/PinkChicken-Regular.ttf") format("ttf");
+  font-family: 'helveticaneuebold';
+  src: url("fonts/ComicSansMS.woff2") format("woff2"), url("fonts/ComicSansMS.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'helveticaneuemedium';
+  src: url("fonts/ComicSansMS.woff2") format("woff2"), url("fonts/ComicSansMS.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 /* :: Import All CSS */
@@ -30,7 +35,7 @@
     background-size: auto;
     background-repeat: repeat;
     background-attachment: scroll;*/
-  font-family: "pinkchicken";
+  font-family: "helveticaneuemedium";
 }
 
 h1,
@@ -56,10 +61,10 @@ a {
   text-decoration: none;
   outline: none;
   font-size: 14px;
-  font-family: "pinkchicken";
+  font-family: "helveticaneuemedium";
   color: #4f4d4d; }
   a:hover, a:focus {
-    font-family: "pinkchicken";
+    font-family: "helveticaneuemedium";
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     text-decoration: none;
@@ -560,7 +565,7 @@ img {
         text-transform: uppercase;
         color: #000000;
         line-height: 1;
-        font-family: "pinkchicken"; }
+        font-family: "helveticaneuemedium"; }
         .single-blog-area .single-blog-thumbnail .post-date a span {
           display: block;
           font-family: "Open Sans", sans-serif;
