@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: 'helveticaneuebold';
-    src: url('fonts/ComicSansMS.woff2') format('woff2'),
-    url('fonts/ComicSansMS.woff') format('woff');
+    src: url('fonts/sf-slapstick-comic-bold-oblique.woff2') format('woff2'),
+    url('fonts/sf-slapstick-comic-bold-oblique.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -57,7 +57,9 @@ body {
 h1,
 h2,
 h3,
-h4,
+h4{
+    font-family: $helvetica-bold;
+}
 h5,
 h6 {
     color: $heading-color;
