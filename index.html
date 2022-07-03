@@ -259,38 +259,14 @@
         alert(date)
     </script>-->
     <script typ"text/javascript">
-        var xmlHttp;
-function srvTime(){
-    try {
-        //FF, Opera, Safari, Chrome
-        xmlHttp = new XMLHttpRequest();
-    }
-    catch (err1) {
-        //IE
-        try {
-            xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
-        }
-        catch (err2) {
-            try {
-                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
-            }
-            catch (eerr3) {
-                //AJAX not supported, use CPU time.
-                alert("AJAX not supported");
-            }
-        }
-    }
-    xmlHttp.open('HEAD',window.location.href.toString(),false);
-    xmlHttp.setRequestHeader("Content-Type", "text/html");
-    xmlHttp.send('');
-    return xmlHttp.getResponseHeader("Date");
-    }
+        import { getServerDate } from "./serverDate.js";
 
-    var st = srvTime();
-    var date = new Date();
-    date = new Date(st);
-    document.write(st);
-    alert(date);
+      let lastSample = {};
+
+      const synchronize = async () => {
+        lastSample = await getServerDate();
+          alert(lastSample);
+      };
 </script>
 
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
