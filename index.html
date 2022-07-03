@@ -265,17 +265,7 @@
     </script>-->
 <script type="text/javascript">
       function getServerDate(){
-    var xhr = null;
-    if(window.XMLHttpRequest){
-      xhr = new window.XMLHttpRequest();
-    }else{ // ie
-      xhr = new ActiveObject("Microsoft")
-    }
- 
-    Xhr.open("GET","/",false)//false is immutable
-    xhr.send(null);
-    var date = xhr.getResponseHeader("Date");
-    return new Date(date);
+    return new Date($.ajax({async: false}).getResponseHeader("Date"));
 }
 var d = getServerDate();
     alert(d);
