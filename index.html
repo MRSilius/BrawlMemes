@@ -247,19 +247,20 @@
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
 
     <script type="text/javascript">
-        new Date();
-            alert(Date)        
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+        document.write(today);      
     </script>
 
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
+    <!--<script src="js/jquery/jquery-2.2.4.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
     <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="js/active.js"></script>-->
 
 </body>
 
