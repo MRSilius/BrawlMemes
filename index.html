@@ -264,27 +264,14 @@
         alert(date)
     </script>-->
 <script type="text/javascript">
-      function getServerDate(){
-    var xhr = null;
-    if(window.XMLHttpRequest){
-      xhr = new window.XMLHttpRequest();
-    }else{ // ie
-      xhr = new ActiveObject("Microsoft")
-    }
- 
-    xhr.open("GET","/",true);
-    xhr.send(null);
-    xhr.onreadystatechange=function(){
-        var time,date;
-        if(xhr.readyState == 2){
-            time = xhr.getResponseHeader("Date");
-            date = new Date(time);
-            console.log(date);
-        }
-    }
-}
-var d = getServerDate();
-    alert(d);
+      function display_ct() {
+var x = new Date()
+var x1=x.toUTCString();// changing the display to UTC string
+document.getElementById('ct').innerHTML = x1;
+tt=display_c();
+    alert(x1);
+ }
+display_ct();
     
 </script>
 
