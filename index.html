@@ -246,7 +246,7 @@
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
 
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         var date = new Date();
         var dd = String(date.getDate()).padStart(2, '0');
         var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -257,7 +257,39 @@
         document.write(date);
         document.write(tt);
         alert(date)
-    </script>
+    </script>-->
+    <script typ"text/javascript">
+        var xmlHttp;
+function srvTime(){
+    try {
+        //FF, Opera, Safari, Chrome
+        xmlHttp = new XMLHttpRequest();
+    }
+    catch (err1) {
+        //IE
+        try {
+            xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+        }
+        catch (err2) {
+            try {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            catch (eerr3) {
+                //AJAX not supported, use CPU time.
+                alert("AJAX not supported");
+            }
+        }
+    }
+    xmlHttp.open('HEAD',window.location.href.toString(),false);
+    xmlHttp.setRequestHeader("Content-Type", "text/html");
+    xmlHttp.send('');
+    return xmlHttp.getResponseHeader("Date");
+    }
+
+    var st = srvTime();
+    var date = new Date(st);
+    document.write(st);
+</script>
 
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <script src="js/popper.min.js"></script>
