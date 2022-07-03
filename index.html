@@ -263,24 +263,23 @@
         document.write(tt);
         alert(date)
     </script>-->
-    <script type="module">
-        import { getServerDate } from "./serverDate.js";
-
-      let lastSample = {};
-
-      const synchronize = async () => {
-        lastSample = await getServerDate();
-          alert(lastSample);
-      };
-        
-        const updateClocks = () => {
-        const { offset, uncertainty } = lastSample;
-        const clientDate = new Date();
-        const serverDate = new Date(clientDate.getTime() + offset);
-
-        document.getElementById("client").innerHTML = String(clientDate);
-        document.getElementById("server").innerHTML = String(serverDate);
-      };
+<script type="text/javascript">
+      function getServerDate(){
+    var xhr = null;
+    if(window.XMLHttpRequest){
+      xhr = new window.XMLHttpRequest();
+    }else{ // ie
+      xhr = new ActiveObject("Microsoft")
+    }
+ 
+    Xhr.open("GET","/",false)//false is immutable
+    xhr.send(null);
+    var date = xhr.getResponseHeader("Date");
+    return new Date(date);
+}
+var d = getServerDate();
+    alert(d);
+    
 </script>
 
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
