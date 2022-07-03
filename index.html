@@ -264,15 +264,36 @@
         alert(date)
     </script>-->
 <script type="text/javascript">
-      function display_ct() {
-var x = new Date()
-var x1=x.toUTCString();// changing the display to UTC string
-document.getElementById('ct').innerHTML = x1;
-tt=display_c();
-    alert(x1);
- }
-display_ct();
-    
+      var xmlHttp;
+function srvTime(){
+    try {
+        //FF, Opera, Safari, Chrome
+        xmlHttp = new XMLHttpRequest();
+    }
+    catch (err1) {
+        //IE
+        try {
+            xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+        }
+        catch (err2) {
+            try {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            catch (eerr3) {
+                //AJAX not supported, use CPU time.
+                alert("AJAX not supported");
+            }
+        }
+    }
+    xmlHttp.open('HEAD',window.location.href.toString(),false);
+    xmlHttp.setRequestHeader("Content-Type", "text/html");
+    xmlHttp.send('');
+    return xmlHttp.getResponseHeader("Date");
+}
+
+var st = srvTime();
+var date = new Date(Date.parse(st.toString()));
+    alert(date);
 </script>
 
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
