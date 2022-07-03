@@ -236,6 +236,11 @@
                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitch"><i class="fa fa-twitch" aria-hidden="true"></i></a>
                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="Discord"><i class="fa-brands fa-discord"></i></a>
                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="Play Market"><i class="fa-brands fa-google-play"></i></a>
+                        
+      <tr>
+        <td>server</td>
+        <td id="server"></td>
+      </tr>
                     </div>
                 </div>
             </div>
@@ -266,6 +271,15 @@
       const synchronize = async () => {
         lastSample = await getServerDate();
           alert(lastSample);
+      };
+        
+        const updateClocks = () => {
+        const { offset, uncertainty } = lastSample;
+        const clientDate = new Date();
+        const serverDate = new Date(clientDate.getTime() + offset);
+
+        document.getElementById("client").innerHTML = String(clientDate);
+        document.getElementById("server").innerHTML = String(serverDate);
       };
 </script>
 
