@@ -289,7 +289,7 @@ function srvTime(){
     var st = srvTime();
     var date = new Date(st);
     document.write(st);
-    document.write(date.toLocaleTimeString());
+    document.write(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
 </script>
 
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
