@@ -5,6 +5,7 @@
   </head>
   
 <body>
+<p id="time"></p>
 <script type="text/javascript">
       var xmlHttp;
 function srvTime(){
@@ -35,6 +36,7 @@ function srvTime(){
 
 var st = srvTime();
 var date = new Date(Date.parse(st.toString()));
-    alert(date);
+document.getElementById("time").innerHTML = date;
+
 </script>
   </body>  
